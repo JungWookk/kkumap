@@ -189,7 +189,7 @@ class PlacesNearbyPageState extends State<PlacesNearbyPage> {
                           hint: const Text('어떤 장소를 원하세요?'),
                           decoration: const InputDecoration(
                             filled: true,
-                            labelText: '장소',
+                            labelText: '',
                             border: OutlineInputBorder(),
                           ),
                           validator: FormBuilderValidators.required(
@@ -201,7 +201,7 @@ class PlacesNearbyPageState extends State<PlacesNearbyPage> {
                           //   )
                           // ],
                           items: places.map<DropdownMenuItem<String>>(
-                                (place) {
+                            (place) {
                               return DropdownMenuItem<String>(
                                 value: place['id'],
                                 child: Text(place['placeName']!),
@@ -247,7 +247,7 @@ class PlacesNearbyPageState extends State<PlacesNearbyPage> {
               children: <Widget>[
                 FloatingActionButton.extended(
                   heroTag: 'btn1',
-                  label: Text('$_googleMapType'),
+                  label: Text('지도 스타일 바꾸기'),
                   icon: const Icon(Icons.map),
                   elevation: 8,
                   backgroundColor: Colors.red[400],
@@ -256,7 +256,7 @@ class PlacesNearbyPageState extends State<PlacesNearbyPage> {
                 const SizedBox(height: 10),
                 FloatingActionButton.extended(
                   heroTag: 'btn2',
-                  label: const Text('어디에서 볼까?'),
+                  label: const Text('이곳어때?'),
                   icon: const Icon(Icons.zoom_out_map),
                   elevation: 8,
                   backgroundColor: Colors.blue[400],

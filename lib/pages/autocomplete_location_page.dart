@@ -216,16 +216,17 @@ class AutocompleteLocationPageState extends State<AutocompleteLocationPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Places Autocomplete & distance'),
-        ),
+            backgroundColor: Colors.blue[200],
+            title: const Text('장소정보',
+                style: TextStyle(
+                    fontFamily: 'NanumBrushScript',
+                    fontSize: 20,
+                    color: Colors.white)),
+            centerTitle: true),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: 25.0,
-                child: Image.asset('assets/images/powered_by_google.png'),
-              ),
               // 검색어와 관련이 높은 검색 결과 표시
               TypeAheadField(
                 // 0.5초 동안 입력변화가 없으면 suggestionsCallback 실행
@@ -237,7 +238,7 @@ class AutocompleteLocationPageState extends State<AutocompleteLocationPage> {
                   decoration: const InputDecoration(
                       contentPadding: EdgeInsets.all(8.0),
                       border: OutlineInputBorder(),
-                      hintText: 'Search places...'),
+                      hintText: '자세한 정보를 확인해 보세요!'),
                 ),
                 // 검색어(pattern)를 이용하여 유사 결과 제안
                 suggestionsCallback: (pattern) async {

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Google Maps Demo',
+      title: '졸업작품',
       home: Home(),
     );
   }
@@ -26,16 +26,24 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Maps'),
-      ),
+          backgroundColor: Colors.blue[200],
+          title: const Text(
+            'kku',
+            style: TextStyle(
+                fontFamily: 'NanumBrushScript',
+                fontSize: 20,
+                color: Colors.white),
+          ),
+          centerTitle: true),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Image.asset('assets/images/aa.png'),
               CustomButton(
-                title: 'Places Nearby',
+                title: '이곳어때?',
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -45,7 +53,7 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               CustomButton(
-                title: 'Place Autocomplete',
+                title: '장소검색',
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) {
@@ -56,7 +64,7 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               CustomButton(
-                title: 'Place Autocomplete + Location',
+                title: '장소정보',
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) {

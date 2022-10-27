@@ -120,18 +120,21 @@ class PlaceAutocompletePageState extends State<PlaceAutocompletePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Places Autocomplete'),
+        backgroundColor: Colors.blue[200],
+        title: const Text(
+          '장소검색',
+          style: TextStyle(
+              fontFamily: 'NanumBrushScript',
+              fontSize: 20,
+              color: Colors.white),
+        ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: 45.0,
-                child: Image.asset('assets/images/powered_by_google.png'),
-              ),
-
               // 검색어와 관련이 높은 검색 결과 표시
               TypeAheadField(
                 // TypeAheadField, TypeAheadFormField
@@ -141,13 +144,13 @@ class PlaceAutocompletePageState extends State<PlaceAutocompletePage> {
                   controller: _searchController,
                   autofocus: true,
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Search places...'),
+                      border: OutlineInputBorder(), hintText: '장소를 검색해 보세요!'),
                 ),
                 // 0.5초 동안 입력변화가 없으면 suggestionsCallback 실행
                 // 검색어(pattern)를 이용하여 유사 결과 제안
                 suggestionsCallback: (pattern) async {
-                  if (sessionToken.isEmpty) { //  == null, isNotEmpty
+                  if (sessionToken.isEmpty) {
+                    //  == null, isNotEmpty
                     sessionToken = uuid.v4();
                   }
 
